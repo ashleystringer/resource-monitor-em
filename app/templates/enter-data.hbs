@@ -1,0 +1,8 @@
+<div>Enter-Data :)</div>
+<div droppable='true' {{on 'drop' this.dropItem}} {{on 'dragover' this.dragOver}} id="drop-zone"></div>
+<div id="test" draggable='true' {{on "dragstart" this.dragStart}}>Test</div>
+<div>
+    {{#if this.isFile}}
+        <button class='button' {{on "click" this.test}}>Submit</button>
+    {{/if}}
+</div>
