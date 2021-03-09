@@ -23,7 +23,7 @@ export default class EnterDataController extends Controller {
                 this.isFile = true;
             }else{
                 for(let i = 0; i < event.dataTransfer.files.length; i++){
-                    console.log("2. file " + event.dataTransfer.files[i].name);
+                    //console.log("2. file " + event.dataTransfer.files[i].name);
                 }
             }
             //event.target.appendChild(document.getElementById(data));
@@ -37,11 +37,12 @@ export default class EnterDataController extends Controller {
         }
         @action test(){
             console.log("file.name " + this.file.name);
-            
+            const filetest = this.file.text().then((text)=>text);
+            //console.log(filetest.value);
+            //console.log(filetest);
             this.file.text().then((text) => {
-                console.log(text);
+                //console.log(text);
                 //console.log(text.length);
-                //console.log(text[16]);
             });
         }
 }
