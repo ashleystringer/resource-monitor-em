@@ -5,6 +5,12 @@ import { inject as service } from '@ember/service';
 
 export default class EnterDataController extends Controller {
         //file = 'file'
+        @tracked resetUpload;
+
+        @action reset(){
+            this.resetUpload = true;
+        }
+
         @service store;
         @tracked isFile = false;
         file = null;
