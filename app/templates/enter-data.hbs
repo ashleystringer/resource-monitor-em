@@ -5,6 +5,9 @@
         <button class='button' {{on "click" this.test}}>Submit</button>
     {{/if}}
 </div>-->
+<div><LinkTo @route="index" class='button'>Home</LinkTo></div>
+<div><LinkTo @route="chart" class='button'>Chart</LinkTo></div>
+
 <div>
     <ImageUpload @url="http://localhost:8080/api/upload" @reset={{this.resetUpload}} @image=""/>
 </div>
