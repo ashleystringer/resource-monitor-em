@@ -3,6 +3,15 @@
 </div>
 <div><LinkTo @route="index" class='button'>Home</LinkTo></div>
 <div><LinkTo @route="enter-data" class='button'>Enter Data</LinkTo></div>
-<div> 
-{{g-timeline data=model }}
+<div>
+    <!--<div>{{g-timeline data=model showBarLabels=false}}</div>-->
+    <div>
+        <BsTab as |tab|>
+            <tab.pane @title="Test 1">Testing 1 </tab.pane>
+            <tab.pane @title="Test 2">Testing 2 </tab.pane>
+            <tab.pane @title="Test 3">
+                <div>{{g-timeline data=model showBarLabels=false}}</div>
+            </tab.pane>
+        </BsTab>
+    </div>
 </div>
