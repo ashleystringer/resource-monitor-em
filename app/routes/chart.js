@@ -8,6 +8,9 @@ export default class ChartRoute extends Route {
 
     async model () {
         //const data = this.store.findAll('files');
+         const data = this.store.findAll('file');
+         console.log(data);
+         return data;
         //console.log(data);
         /*return [
           ['Year', 'Sales', 'Expenses'],
@@ -23,7 +26,7 @@ export default class ChartRoute extends Route {
           ['2012', 1590, 2004, 1850]
         ];*/
         
-        return [
+        /*return [
           ['Row', 'Name', {role: 'style'}, 'Start', 'End'],
           ['Function', '__tunable_get_val', '#004777', 1616103695844.892090, 1616103695845.537109],
           ['Function', '__tunable_get_val', '#004777', 1616103695846.103027, 1616103695846.114014],
@@ -65,7 +68,7 @@ export default class ChartRoute extends Route {
           ['Function', 'malloc', '#39A9DB', 1616103696033.941895, 1616103696033.955078],
           ['Function', 'free', '#39A9DB', 1616103696034.023926, 1616103696034.035889],
           ['Function', 'calloc', '#39A9DB', 1616103696034.071045, 1616103696034.071045]
-        ]
+        ]*/
         
       }
 }
