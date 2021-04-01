@@ -7,6 +7,7 @@ export default class ChartRoute extends Route {
   @service store;
 
     async model () {
+         console.log("Model in Chart Route");
          const data = this.store.findAll('file');
          console.log(data);
          return this.store.findAll('file');

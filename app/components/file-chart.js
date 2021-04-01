@@ -9,17 +9,18 @@ export default class FileChartComponent extends Component {
         super(...args);
         console.log("constructor of File Chart");
         this.chart_data = this.args.data;
+        //console.log(this.chart_data);
         this.array_data = this.format_data();
+        console.log(this.array_data);
     }
     format_data(){
         console.log("format_data method");
         let data = ['Row', 'Name', {role: 'style'}, 'Start', 'End'];
-        console.log(data);
         let arr = [];
 
         let data_array;
         this.chart_data.map(data =>{
-            let data_color = this.find_color(data.resource_type);
+            let data_color = this.find_color(data.resource);
             data_array = ["Function", data.name, data_color, data.start, data.end];
             arr.push(data_array);
         });
