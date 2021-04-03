@@ -17,9 +17,10 @@ export default class FileChartComponent extends Component {
         console.log("format_data method");
         let data = ['Row', 'Name', {role: 'style'}, 'Start', 'End'];
         let arr = [];
-
+    
         let data_array;
         this.chart_data.map(data =>{
+            console.log("data.file: " + data.file);
             let data_color = this.find_color(data.resource);
             data_array = ["Function", data.name, data_color, data.start, data.end];
             arr.push(data_array);

@@ -1,7 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-
 export default class ChartRoute extends Route {
 
   @service store;
@@ -9,57 +8,19 @@ export default class ChartRoute extends Route {
     async model () {
          console.log("Model in Chart Route");
          const data = this.store.findAll('file');
+
          console.log(data);
-         return this.store.findAll('file');
-        
+         //return this.store.findAll('file');
+
+         return Ember.RSVP.hash({
+          calls: this.store.findAll('call'),
+          files: this.store.findAll('file')
+        })
          /*return [
           ['Row', 'Name', {role: 'style'}, 'Start', 'End'],
           ['Function', '__tunable_get_val', '#004777', 1616103695844.892090, 1616103695845.537109],
           ['Function', '__tunable_get_val', '#004777', 1616103695846.103027, 1616103695846.114014]
          ];*/
-        /*return [
-          ['Row', 'Name', {role: 'style'}, 'Start', 'End'],
-          ['Function', '__tunable_get_val', '#004777', 1616103695844.892090, 1616103695845.537109],
-          ['Function', '__tunable_get_val', '#004777', 1616103695846.103027, 1616103695846.114014],
-          ['Function', '__tunable_get_val', '#004777', 1616103695846.576904, 1616103695846.586914],
-          ['Function', '__tunable_get_val', '#004777', 1616103695846.778076, 1616103695846.788086],
-          ['Function', '__tunable_get_val', '#004777', 1616103695847.831055, 1616103695847.841064],
-          ['Function', '__tunable_get_val', '#004777', 1616103695848.102051, 1616103695848.112061],
-          ['Function', 'calloc', '#39A9DB', 1616103695854.306885, 1616103695854.306885],
-          ['Function', 'malloc', '#39A9DB', 1616103695854.910889, 1616103695855.346924],
-          ['Function', 'calloc', '#39A9DB', 1616103695872.062012, 1616103695872.062012],
-          ['Function', 'malloc', '#39A9DB', 1616103695872.072998, 1616103695872.291016],
-          ['Function', 'malloc', '#39A9DB', 1616103695878.562012, 1616103695878.572021],
-          ['Function', '__tunable_get_val', '#004777', 1616103695893.907959, 1616103695893.917969],
-          ['Function', 'malloc', '#39A9DB', 1616103695898.895996, 1616103695898.906982],
-          ['Function', 'malloc', '#39A9DB', 1616103695904.715088, 1616103695904.725098],
-          ['Function', 'malloc', '#39A9DB', 1616103695905.052002, 1616103695905.062012],
-          ['Function', 'malloc', '#39A9DB', 1616103695908.967041, 1616103695908.977051],
-          ['Function', 'malloc', '#39A9DB', 1616103695911.156982, 1616103695911.167969],
-          ['Function', 'free', '#39A9DB', 1616103695913.322021, 1616103695913.332031],
-          ['Function', 'malloc', '#39A9DB', 1616103695915.802979, 1616103695915.812988],
-          ['Function', 'malloc', '#39A9DB', 1616103695917.437988, 1616103695917.447998],
-          ['Function', 'free', '#39A9DB', 1616103695918.180908, 1616103695918.190918],
-          ['Function', '_dl_debug_state', '#004777', 1616103695922.822998, 1616103695922.833984],
-          ['Function', '__tunable_get_val', '#004777', 1616103695968.112061, 1616103695968.134033],
-          ['Function', 'malloc', '#39A9DB', 1616103695974.805908, 1616103695974.815918],
-          ['Function', 'free', '#39A9DB', 1616103695978.736084, 1616103695978.746094],
-          ['Function', 'calloc', '#39A9DB', 1616103695982.237061, 1616103695982.237061],
-          ['Function', 'malloc', '#39A9DB', 1616103695982.247070, 1616103695983.149902],
-          ['Function', 'malloc', '#39A9DB', 1616103695985.301025, 1616103695985.312988],
-          ['Function', '_dl_catch_exception', '#004777', 1616103695927.388916, 1616103696005.137939],
-          ['Function', '__tunable_get_val', '#004777', 1616103696013.095947, 1616103696013.106934],
-          ['Function', 'malloc', '#39A9DB', 1616103696013.121094, 1616103696013.129883],
-          ['Function', 'free', '#39A9DB', 1616103696016.243896, 1616103696016.253906],
-          ['Function', 'calloc', '#39A9DB', 1616103696016.440918, 1616103696016.440918],
-          ['Function', 'malloc', '#39A9DB', 1616103696016.450928, 1616103696016.459961],
-          ['Function', 'malloc', '#39A9DB', 1616103696016.469971, 1616103696016.479004],
-          ['Function', '_dl_catch_exception', '#004777', 1616103696006.186035, 1616103696021.395996],
-          ['Function', '__tunable_get_val', '#004777', 1616103696033.535889, 1616103696033.550049],
-          ['Function', 'malloc', '#39A9DB', 1616103696033.941895, 1616103696033.955078],
-          ['Function', 'free', '#39A9DB', 1616103696034.023926, 1616103696034.035889],
-          ['Function', 'calloc', '#39A9DB', 1616103696034.071045, 1616103696034.071045]
-        ];*/
         
       }
 }

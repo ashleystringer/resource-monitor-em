@@ -1,8 +1,9 @@
 import Model, { attr } from '@ember-data/model';
 
-export default class FileModel extends Model {
+export default class CallModel extends Model {
     @attr name;
-    @attr type;
+    @attr resource;
     @attr start;
     @attr end;
+    @attr file;
 }
