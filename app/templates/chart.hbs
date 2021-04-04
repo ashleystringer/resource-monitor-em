@@ -13,7 +13,10 @@
                 </div>
             </tab.pane>
             {{#each @model.files as |file|}}
-                <tab.pane @title={{file.realname}}></tab.pane>
+                <tab.pane @title={{file.realname}}>
+                    <div>{{file}}</div>
+                    <div><File @data={{model}}/></div>
+                </tab.pane>
             {{/each}}
         </BsTab>
     </div>

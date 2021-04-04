@@ -7,9 +7,9 @@ export default class FileChartComponent extends Component {
     @tracked array_data = null;
     constructor(...args){
         super(...args);
-        console.log("constructor of File Chart");
+
         this.chart_data = this.args.data;
-        //console.log(this.chart_data);
+        console.log(this.args.data);
         this.array_data = this.format_data();
         console.log(this.array_data);
     }
