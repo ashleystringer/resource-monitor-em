@@ -9,8 +9,8 @@ export default class FileChartComponent extends Component {
         super(...args);
 
         this.chart_data = this.args.data;
-        console.log(this.args.data);
         this.array_data = this.format_data();
+        
         console.log(this.array_data);
     }
     format_data(){
@@ -20,13 +20,11 @@ export default class FileChartComponent extends Component {
     
         let data_array;
         this.chart_data.map(data =>{
-            console.log("data.file: " + data.file);
             let data_color = this.find_color(data.resource);
             data_array = ["Function", data.name, data_color, data.start, data.end];
             arr.push(data_array);
         });
         arr.splice(0, 0, data);
-        //this.array_data = arr;
         return arr;
     }
     find_color(resource_type){
